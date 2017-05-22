@@ -12,7 +12,8 @@ parser.add_argument('output_file', metavar='output_file', type=str, help='Name o
 args = parser.parse_args()
 
 list_file = args.input_file
-server = 'fmp://' + args.fmp_server + '/'
+server = args.fmp_server
+server_url = 'fmp://' + args.fmp_server + '/'
 output_file = args.output_file
 
 with open(list_file, 'r') as f:
@@ -42,9 +43,9 @@ for folder in folder_and_file_list:
     file_only_html_safe = quote(file_only)
     files_list.append(file_only_html_safe)
 
-    db_list.append({'display': folder, 'url': server + file_only_html_safe})
+    db_list.append({'display': folder, 'url': server_url + file_only_html_safe})
 
-context = {'db_list': db_list, 'server': args.fmp_server}
+context = {'db_list': db_list, 'server': server}
 
 site = make_site(contexts=[('index.html', context)])
 
