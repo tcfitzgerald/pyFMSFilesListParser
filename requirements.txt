@@ -6,7 +6,7 @@ Jinja2==2.9.6
 MarkupSafe==1.0
 packaging==16.8
 pathtools==0.1.2
-pip==9.0.1
+pip==19.2
 pyparsing==2.2.0
 PyYAML==5.4
 setuptools==35.0.2
